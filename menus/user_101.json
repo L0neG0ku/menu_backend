@@ -1,0 +1,18 @@
+{
+  "userId": "101",
+  "restaurant": "Cafe Alpha",
+  "menu": [
+    {
+      "id": 1,
+      "name": "Tea",
+      "price": 20,
+      "image": "/images/tea.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Coffee",
+      "price": 40,
+      "image": "/images/coffee.jpg"
+    }
+  ]
+}
