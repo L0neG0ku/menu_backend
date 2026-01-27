@@ -6,13 +6,13 @@
       "id": 1,
       "name": "Tea",
       "price": 20,
-      "image": "/images/tea.jpg"
+      "image": "/images/tea.webp"
     },
     {
       "id": 2,
       "name": "Coffee",
       "price": 40,
-      "image": "/images/coffee.jpg"
+      "image": "/images/coffee.webp"
     }
   ]
 }
