@@ -3,6 +3,7 @@ from fastapi.staticfiles import StaticFiles
 import json
 import os
 from uuid import uuid4
+from fastapi import Form 
 
 app = FastAPI(title="Menu System API")
 
@@ -71,12 +72,11 @@ def get_menu(restaurant_id: str):
     return restaurant
 
 
-# ➕ Add Menu Item (Master App)
 @app.post("/menu/{restaurant_id}/item")
 def add_menu_item(
     restaurant_id: str,
-    name: str,
-    price: float,
+    name: str = Form(...),
+    price: float = Form(...),
     image: UploadFile = File(...)
 ):
     data = load_data()
