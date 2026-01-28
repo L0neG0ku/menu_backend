@@ -25,11 +25,11 @@ app.mount("/images", StaticFiles(directory=IMAGE_FOLDER), name="images")
 # -----------------------------------
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-GITHUB_REPO = os.getenv("GITHUB_REPO")          # example: LOneG0ku/menu-backend
+GITHUB_REPO = os.getenv("GITHUB_REPO")         
 GITHUB_BRANCH = os.getenv("GITHUB_BRANCH", "main")
 
 GITHUB_API = "https://api.github.com"
-DATA_PATH = "data/menus.json"
+DATA_PATH = "menu_backend/data/menus.json"
 
 
 def github_headers():
