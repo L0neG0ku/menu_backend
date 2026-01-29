@@ -14,6 +14,12 @@
           "name": "coffee",
           "price": 80.0,
           "image": "/images/2f3ec5ad-4835-437e-b7a9-17291c9d5fd2.jpg"
+        },
+        {
+          "id": "bc2da4",
+          "name": "biryani",
+          "price": 120.0,
+          "image": "/images/9acdde5d-65be-460f-90a0-ed560eca7305.jpg"
         }
       ]
     }
