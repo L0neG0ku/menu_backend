@@ -2,7 +2,14 @@
   "restaurants": {
     "8326f1": {
       "name": "demo",
-      "menu": []
+      "menu": [
+        {
+          "id": "641d20",
+          "name": "tea",
+          "price": 60.0,
+          "image": "/images/83af5375-74d9-4006-8b5d-731519322706.jpg"
+        }
+      ]
     }
   }
 }
