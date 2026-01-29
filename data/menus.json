@@ -20,6 +20,12 @@
           "name": "biryani",
           "price": 120.0,
           "image": "/images/9acdde5d-65be-460f-90a0-ed560eca7305.jpg"
+        },
+        {
+          "id": "783146",
+          "name": "burger",
+          "price": 80.0,
+          "image": "/images/55b8f724-63a2-4df5-8cb2-1aa0a67d9712.jpg"
         }
       ]
     }
