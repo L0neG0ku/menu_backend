@@ -1,3 +1,8 @@
 {
-  "restaurants": {}
+  "restaurants": {
+    "8326f1": {
+      "name": "demo",
+      "menu": []
+    }
+  }
 }
