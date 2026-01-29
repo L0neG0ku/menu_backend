@@ -32,6 +32,12 @@
           "name": "burger",
           "price": 80.0,
           "image": "/images/d3372780-ec2a-4a03-9cc5-2ca467e97d0c.jpg"
+        },
+        {
+          "id": "93268f",
+          "name": "pizza",
+          "price": 240.0,
+          "image": "/images/006304b7-fc14-4a5c-8a6f-d4b17f911cbd.jpg"
         }
       ]
     }
