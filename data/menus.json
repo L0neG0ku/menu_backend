@@ -8,6 +8,12 @@
           "name": "tea",
           "price": 60.0,
           "image": "/images/83af5375-74d9-4006-8b5d-731519322706.jpg"
+        },
+        {
+          "id": "c7a94f",
+          "name": "coffee",
+          "price": 80.0,
+          "image": "/images/2f3ec5ad-4835-437e-b7a9-17291c9d5fd2.jpg"
         }
       ]
     }
