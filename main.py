@@ -29,7 +29,7 @@ GITHUB_REPO = os.getenv("GITHUB_REPO")
 GITHUB_BRANCH = os.getenv("GITHUB_BRANCH", "main")
 
 GITHUB_API = "https://api.github.com"
-DATA_PATH = "menu_backend/data/menus.json"
+DATA_PATH = "data/menus.json"
 
 
 def github_headers():
