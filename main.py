@@ -26,7 +26,7 @@ app.mount("/images", StaticFiles(directory=IMAGE_FOLDER), name="images")
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 GITHUB_REPO = os.getenv("GITHUB_REPO")         
-GITHUB_BRANCH = os.getenv("GITHUB_BRANCH", "main")
+GITHUB_BRANCH = os.getenv("GITHUB_BRANCH", "master")
 
 GITHUB_API = "https://api.github.com"
 DATA_PATH = "data/menus.json"
