@@ -44,6 +44,12 @@
           "name": "Momo",
           "price": 60.0,
           "image": "/images/2fcc5ffe-6b2f-42dd-8ba6-36b0a3b459f5.jpg"
+        },
+        {
+          "id": "b3d437",
+          "name": "Dosa",
+          "price": 120.0,
+          "image": "/images/cae6463f-dc62-441a-9d8f-d385b606e513.jpg"
         }
       ]
     }
