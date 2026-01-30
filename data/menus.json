@@ -61,6 +61,12 @@
           "name": "veg snacker",
           "price": 200.0,
           "image": "/images/a6d0de27-2977-402e-9f04-e49f2940d690.jpg"
+        },
+        {
+          "id": "3d6730",
+          "name": "Udta Punjab",
+          "price": 300.0,
+          "image": "/images/68c054fd-9306-4c7b-9891-7731fb88ef3c.jpg"
         }
       ]
     }
