@@ -109,6 +109,12 @@
           "name": "Popsicle",
           "price": 80.0,
           "image": "/images/6cbe6dd8-17a5-4967-a9aa-82c222734341.jpg"
+        },
+        {
+          "id": "126111",
+          "name": "kebab",
+          "price": 50.0,
+          "image": "/images/2062f16b-a9f0-4ed4-a8a3-b6ce54c47923.jpg"
         }
       ]
     }
