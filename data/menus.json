@@ -85,6 +85,12 @@
           "name": "Fries",
           "price": 200.0,
           "image": "/images/3f69bb57-d3ea-416f-beb0-65874e3e467a.jpg"
+        },
+        {
+          "id": "f80faf",
+          "name": "Chicken snacker with fries",
+          "price": 250.0,
+          "image": "/images/3ce1109f-5ba9-48ab-9957-54ae443e6945.jpg"
         }
       ]
     }
