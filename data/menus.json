@@ -38,6 +38,12 @@
           "name": "pizza",
           "price": 240.0,
           "image": "/images/006304b7-fc14-4a5c-8a6f-d4b17f911cbd.jpg"
+        },
+        {
+          "id": "a1dee0",
+          "name": "Momo",
+          "price": 60.0,
+          "image": "/images/2fcc5ffe-6b2f-42dd-8ba6-36b0a3b459f5.jpg"
         }
       ]
     }
