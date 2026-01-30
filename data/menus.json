@@ -140,6 +140,10 @@
         "pizza": {
           "name": "pizza",
           "items": []
+        },
+        "burger": {
+          "name": "burger",
+          "items": []
         }
       }
     },
