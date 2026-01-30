@@ -91,6 +91,12 @@
           "name": "Chicken snacker with fries",
           "price": 250.0,
           "image": "/images/3ce1109f-5ba9-48ab-9957-54ae443e6945.jpg"
+        },
+        {
+          "id": "38022d",
+          "name": "Murgh pops",
+          "price": 300.0,
+          "image": "/images/a665297a-9702-4d40-93fc-0d0575f1a516.jpg"
         }
       ]
     }
