@@ -79,6 +79,12 @@
           "name": "Chicken snacker",
           "price": 250.0,
           "image": "/images/eaeabf3f-bd29-4ce6-bacb-896b817e6b44.jpg"
+        },
+        {
+          "id": "146487",
+          "name": "Fries",
+          "price": 200.0,
+          "image": "/images/3f69bb57-d3ea-416f-beb0-65874e3e467a.jpg"
         }
       ]
     }
