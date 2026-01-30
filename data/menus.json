@@ -55,7 +55,14 @@
     },
     "e64e3b": {
       "name": "BURGER SINGH",
-      "menu": []
+      "menu": [
+        {
+          "id": "729e29",
+          "name": "veg snacker",
+          "price": 200.0,
+          "image": "/images/a6d0de27-2977-402e-9f04-e49f2940d690.jpg"
+        }
+      ]
     }
   }
 }
