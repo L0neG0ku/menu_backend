@@ -73,6 +73,12 @@
           "name": "Paneer Pinder",
           "price": 300.0,
           "image": "/images/d24cff43-8b95-40fa-b622-636af342b9e5.jpg"
+        },
+        {
+          "id": "ea31eb",
+          "name": "Chicken snacker",
+          "price": 250.0,
+          "image": "/images/eaeabf3f-bd29-4ce6-bacb-896b817e6b44.jpg"
         }
       ]
     }
