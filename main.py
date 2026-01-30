@@ -7,10 +7,10 @@ import requests
 import base64
 
 # -----------------------------------
-# App
+# App Setup
 # -----------------------------------
 
-app = FastAPI(title="Menu System API")
+app = FastAPI(title="Menu Display System API")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 IMAGE_FOLDER = os.path.join(BASE_DIR, "images")
@@ -21,11 +21,11 @@ os.makedirs(IMAGE_FOLDER, exist_ok=True)
 app.mount("/images", StaticFiles(directory=IMAGE_FOLDER), name="images")
 
 # -----------------------------------
-# GitHub Config (from Render env vars)
+# GitHub Config (ENV VARIABLES)
 # -----------------------------------
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-GITHUB_REPO = os.getenv("GITHUB_REPO")         
+GITHUB_REPO = os.getenv("GITHUB_REPO")          # e.g. username/repo
 GITHUB_BRANCH = os.getenv("GITHUB_BRANCH", "master")
 
 GITHUB_API = "https://api.github.com"
@@ -34,7 +34,7 @@ DATA_PATH = "data/menus.json"
 
 def github_headers():
     if not GITHUB_TOKEN:
-        raise RuntimeError("GITHUB_TOKEN not configured in environment variables")
+        raise RuntimeError("GITHUB_TOKEN not set")
 
     return {
         "Authorization": f"token {GITHUB_TOKEN}",
@@ -43,13 +43,10 @@ def github_headers():
 
 
 # -----------------------------------
-# GitHub File Helpers
+# GitHub Helpers
 # -----------------------------------
 
 def load_data():
-    """
-    Read menus.json from GitHub repo
-    """
     url = f"{GITHUB_API}/repos/{GITHUB_REPO}/contents/{DATA_PATH}?ref={GITHUB_BRANCH}"
     r = requests.get(url, headers=github_headers())
     r.raise_for_status()
@@ -59,24 +56,20 @@ def load_data():
     return json.loads(decoded)
 
 
-def save_data(data, commit_message="Update menu data"):
-    """
-    Write menus.json back to GitHub repo
-    """
+def save_data(data, message="Update menu data"):
     url = f"{GITHUB_API}/repos/{GITHUB_REPO}/contents/{DATA_PATH}"
 
-    # Get current file SHA
     r = requests.get(url, headers=github_headers())
     r.raise_for_status()
     sha = r.json()["sha"]
 
-    encoded_content = base64.b64encode(
+    encoded = base64.b64encode(
         json.dumps(data, indent=2).encode("utf-8")
     ).decode("utf-8")
 
     payload = {
-        "message": commit_message,
-        "content": encoded_content,
+        "message": message,
+        "content": encoded,
         "sha": sha,
         "branch": GITHUB_BRANCH
     }
@@ -86,24 +79,27 @@ def save_data(data, commit_message="Update menu data"):
 
 
 # -----------------------------------
-# APIs
+# Health Check
 # -----------------------------------
 
 @app.get("/")
 def health():
-    return {"status": "API Running"}
+    return {"status": "API running 🚀"}
 
 
-# ➕ Create Restaurant (Master App)
+# -----------------------------------
+# Restaurant APIs
+# -----------------------------------
+
 @app.post("/restaurant")
-def create_restaurant(name: str):
+def create_restaurant(name: str = Form(...)):
     data = load_data()
 
     restaurant_id = str(uuid4())[:6]
 
     data["restaurants"][restaurant_id] = {
         "name": name,
-        "menu": []
+        "categories": {}
     }
 
     save_data(data, f"Create restaurant {restaurant_id}")
@@ -114,7 +110,6 @@ def create_restaurant(name: str):
     }
 
 
-# 📄 Get Menu (TV App)
 @app.get("/menu/{restaurant_id}")
 def get_menu(restaurant_id: str):
     data = load_data()
@@ -126,10 +121,50 @@ def get_menu(restaurant_id: str):
     return restaurant
 
 
-# ➕ Add Menu Item (with image)
-@app.post("/menu/{restaurant_id}/item")
+# -----------------------------------
+# Category APIs
+# -----------------------------------
+
+@app.post("/menu/{restaurant_id}/category")
+def create_category(
+    restaurant_id: str,
+    category_name: str = Form(...)
+):
+    data = load_data()
+    restaurant = data["restaurants"].get(restaurant_id)
+
+    if not restaurant:
+        raise HTTPException(status_code=404, detail="Restaurant not found")
+
+    category_id = category_name.lower().replace(" ", "_")
+
+    if category_id in restaurant["categories"]:
+        raise HTTPException(status_code=400, detail="Category already exists")
+
+    restaurant["categories"][category_id] = {
+        "name": category_name,
+        "items": []
+    }
+
+    save_data(
+        data,
+        f"Create category {category_name} in restaurant {restaurant_id}"
+    )
+
+    return {
+        "category_id": category_id,
+        "name": category_name
+    }
+
+
+# -----------------------------------
+# Menu Item APIs
+# -----------------------------------
+
+@app.post("/menu/{restaurant_id}/category/{category_id}/item")
 def add_menu_item(
     restaurant_id: str,
+    category_id: str,
     name: str = Form(...),
     price: float = Form(...),
     image: UploadFile = File(...)
@@ -140,7 +175,12 @@ def add_menu_item(
     if not restaurant:
         raise HTTPException(status_code=404, detail="Restaurant not found")
 
-    # Save image locally (served by Render)
+    category = restaurant["categories"].get(category_id)
+
+    if not category:
+        raise HTTPException(status_code=404, detail="Category not found")
+
+    # Save image
     ext = image.filename.split(".")[-1]
     image_name = f"{uuid4()}.{ext}"
     image_path = os.path.join(IMAGE_FOLDER, image_name)
@@ -155,8 +195,11 @@ def add_menu_item(
         "image": f"/images/{image_name}"
     }
 
-    restaurant["menu"].append(item)
+    category["items"].append(item)
 
-    save_data(data, f"Add item {item['id']} to restaurant {restaurant_id}")
+    save_data(
+        data,
+        f"Add item {item['id']} to {category_id} ({restaurant_id})"
+    )
 
     return item
