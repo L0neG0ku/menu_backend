@@ -144,7 +144,12 @@
     },
     "9f88d9": {
       "name": "Restroo",
-      "categories": {}
+      "categories": {
+        "burger": {
+          "name": "Burger",
+          "items": []
+        }
+      }
     }
   }
 }
