@@ -67,6 +67,12 @@
           "name": "Udta Punjab",
           "price": 300.0,
           "image": "/images/68c054fd-9306-4c7b-9891-7731fb88ef3c.jpg"
+        },
+        {
+          "id": "671d06",
+          "name": "Paneer Pinder",
+          "price": 300.0,
+          "image": "/images/d24cff43-8b95-40fa-b622-636af342b9e5.jpg"
         }
       ]
     }
