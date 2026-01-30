@@ -97,6 +97,12 @@
           "name": "Murgh pops",
           "price": 300.0,
           "image": "/images/a665297a-9702-4d40-93fc-0d0575f1a516.jpg"
+        },
+        {
+          "id": "e34169",
+          "name": "murgh musallam",
+          "price": 800.0,
+          "image": "/images/50531400-ebdc-4ca9-92bd-5af23e99bfc4.jpg"
         }
       ]
     }
