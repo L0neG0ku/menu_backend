@@ -103,6 +103,12 @@
           "name": "murgh musallam",
           "price": 800.0,
           "image": "/images/50531400-ebdc-4ca9-92bd-5af23e99bfc4.jpg"
+        },
+        {
+          "id": "473171",
+          "name": "Popsicle",
+          "price": 80.0,
+          "image": "/images/6cbe6dd8-17a5-4967-a9aa-82c222734341.jpg"
         }
       ]
     }
