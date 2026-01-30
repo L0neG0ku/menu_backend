@@ -136,7 +136,12 @@
     },
     "ace43c": {
       "name": "rahbar",
-      "categories": {}
+      "categories": {
+        "pizza": {
+          "name": "pizza",
+          "items": []
+        }
+      }
     },
     "f19236": {
       "name": "Restaurant",
