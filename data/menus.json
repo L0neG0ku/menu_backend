@@ -139,7 +139,14 @@
       "categories": {
         "pizza": {
           "name": "pizza",
-          "items": []
+          "items": [
+            {
+              "id": "f52ca2",
+              "name": "chesse pizza",
+              "price": 250.0,
+              "image": "/images/ced520e0-e9c0-4202-8747-68652f5f6607.jpg"
+            }
+          ]
         },
         "burger": {
           "name": "burger",
