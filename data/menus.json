@@ -179,6 +179,12 @@
               "name": "veg momo",
               "price": 50.0,
               "image": "/images/051d12a3-c8ac-4bf2-9c32-f82d654ab12d.jpg"
+            },
+            {
+              "id": "ba8d97",
+              "name": "paneer momo",
+              "price": 50.0,
+              "image": "/images/5a4d40fa-977d-49c2-a7d4-8a9367ba8b4f.jpg"
             }
           ]
         }
