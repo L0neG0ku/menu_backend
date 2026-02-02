@@ -156,7 +156,14 @@
         },
         "burger": {
           "name": "burger",
-          "items": []
+          "items": [
+            {
+              "id": "4c2247",
+              "name": "chicken burger",
+              "price": 150.0,
+              "image": "/images/a0d77c45-f790-45a2-aaf7-26069836e410.jpg"
+            }
+          ]
         },
         "momo": {
           "name": "momo",
