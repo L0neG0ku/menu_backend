@@ -173,7 +173,14 @@
         },
         "momo": {
           "name": "momo",
-          "items": []
+          "items": [
+            {
+              "id": "fb175c",
+              "name": "veg momo",
+              "price": 50.0,
+              "image": "/images/051d12a3-c8ac-4bf2-9c32-f82d654ab12d.jpg"
+            }
+          ]
         }
       }
     },
