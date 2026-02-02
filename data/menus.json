@@ -145,6 +145,12 @@
               "name": "chesse pizza",
               "price": 250.0,
               "image": "/images/ced520e0-e9c0-4202-8747-68652f5f6607.jpg"
+            },
+            {
+              "id": "10bea7",
+              "name": "happy pizza",
+              "price": 200.0,
+              "image": "/images/2f75e858-d431-4302-9c53-72508c60ee79.jpg"
             }
           ]
         },
