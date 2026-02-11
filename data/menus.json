@@ -83,6 +83,10 @@
         "pizza": {
           "name": "PIZZA",
           "items": []
+        },
+        "chowmein": {
+          "name": "Chowmein",
+          "items": []
         }
       }
     }
