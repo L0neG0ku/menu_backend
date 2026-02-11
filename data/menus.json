@@ -92,7 +92,12 @@
     },
     "3b8f88": {
       "name": "NEW",
-      "categories": {}
+      "categories": {
+        "chicken": {
+          "name": "Chicken",
+          "items": []
+        }
+      }
     }
   }
 }
