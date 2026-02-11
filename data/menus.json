@@ -96,6 +96,10 @@
         "chicken": {
           "name": "Chicken",
           "items": []
+        },
+        "mutton": {
+          "name": "Mutton",
+          "items": []
         }
       }
     }
