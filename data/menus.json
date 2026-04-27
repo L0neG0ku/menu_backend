@@ -105,7 +105,12 @@
     },
     "f3ec03": {
       "name": "KFC",
-      "categories": {}
+      "categories": {
+        "pizza": {
+          "name": "Pizza",
+          "items": []
+        }
+      }
     }
   }
 }
